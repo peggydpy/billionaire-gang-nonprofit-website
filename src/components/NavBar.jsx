@@ -48,7 +48,9 @@ export default function NavBar() {
         {/* Left: Logo + brand */}
         <Link href="/" style={{ textDecoration: "none" }}>
   <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-    <img src="/logo.png" alt="Billionaire Gang Logo" width="36" height="36" style={{ display: "block" }} />
+
+    add Billionaire Gang logo to NavBar
+<img src="/logo.png" alt="Billionaire Gang Logo" width="36" height="36" style={{ display: "block" }} />
     <span style={{ fontWeight: 700, fontSize: 18, color: "#111" }}>Billionaire Gang</span>
   </div>
 </Link>
