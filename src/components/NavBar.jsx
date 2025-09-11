@@ -57,8 +57,6 @@ export default function NavBar() {
   </div>
 </Link>
 
-
-
         {/* Right: Tabs */}
         <nav style={{ display: "flex", gap: 24, alignItems: "center" }}>
           {links.map((l) => (
