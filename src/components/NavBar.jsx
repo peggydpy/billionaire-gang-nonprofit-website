@@ -1,20 +1,20 @@
+// src/components/NavBar.jsx
+import Link from "next/link";
 
-
-    textDecoration: "none",
-    fontWeight: 800,
-    letterSpacing: 0.2,
-    whiteSpace: "nowrap",
-  };
-
+export default function NavBar() {
   return (
-    <header style={bar}>
-      <div style={row}>
-        {/* Left: Logo + brand */}
-        <Link href="/" style={{ textDecoration: "none" }}>
-  <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+    <header className="border-b">
+      <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <Link href="/" className="font-semibold text-lg">Billionaire Gang</Link>
 
-    
-<Link href="/" style={{ textDecoration: "none" }}>
-  <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-    <img src="/logo.png" alt="page/Logo.png" width="40" height="40" style={{ display: "block" }} />
-    <span style={{
+        <nav aria-label="Primary">
+          <ul className="flex gap-6">
+            <li><Link href="/about">About</Link></li>
+            <li><Link href="/projects">Projects</Link></li>
+            <li><Link href="/contact">Contact</Link></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  );
+}
