@@ -50,10 +50,13 @@ export default function NavBar() {
   <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
 
     
-<img src="/logo.png" alt="Billionaire Gang Logo" width="36" height="36" style={{ display: "block" }} />
-    <span style={{ fontWeight: 700, fontSize: 18, color: "#111" }}>add Billionaire Gang logo to NavBar</span>
+<Link href="/" style={{ textDecoration: "none" }}>
+  <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+    <img src="/logo.png" alt="Billionaire Gang Logo" width="40" height="40" style={{ display: "block" }} />
+    <span style={{ fontWeight: 700, fontSize: 18, color: "#fff" }}>Billionaire Gang</span>
   </div>
 </Link>
+
 
 
         {/* Right: Tabs */}
