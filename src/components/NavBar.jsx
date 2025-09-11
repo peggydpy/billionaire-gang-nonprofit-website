@@ -46,10 +46,13 @@ export default function NavBar() {
     <header style={bar}>
       <div style={row}>
         {/* Left: Logo + brand */}
-        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
-          <img src="/logo.png" alt="Billionaire Gang Logo" width="36" height="36" style={{ display: "block" }} />
-          <span style={{ fontWeight: 800, fontSize: 18, color: "white" }}>Billionaire Gang</span>
-        </Link>
+        <Link href="/" style={{ textDecoration: "none" }}>
+  <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+    <img src="/logo.png" alt="Billionaire Gang Logo" width="36" height="36" style={{ display: "block" }} />
+    <span style={{ fontWeight: 700, fontSize: 18, color: "#111" }}>Billionaire Gang</span>
+  </div>
+</Link>
+
 
         {/* Right: Tabs */}
         <nav style={{ display: "flex", gap: 24, alignItems: "center" }}>
