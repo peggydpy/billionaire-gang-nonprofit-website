@@ -52,7 +52,7 @@ export default function NavBar() {
     
 <Link href="/" style={{ textDecoration: "none" }}>
   <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-    <img src="/logo.png" alt="Billionaire Gang Logo" width="40" height="40" style={{ display: "block" }} />
+    <img src="/logo.png" alt="page/Logo.png" width="40" height="40" style={{ display: "block" }} />
     <span style={{ fontWeight: 700, fontSize: 18, color: "#fff" }}>Billionaire Gang</span>
   </div>
 </Link>
@@ -69,3 +69,5 @@ export default function NavBar() {
     </header>
   );
 }
+
+        
