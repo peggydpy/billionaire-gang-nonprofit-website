@@ -6,10 +6,14 @@ import { useState } from "react";
 export default function NavBar() {
   const [open, setOpen] = useState(false);
   const links = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/contact", label: "Contact" },
-  ];
+  { href: "/donate-to-participate", label: "Donate to Participate" },
+  { href: "/who-we-are", label: "Who We Are" },
+  { href: "/what-we-do", label: "What We Do" },
+  { href: "/how-it-works", label: "How It Works" },
+  { href: "/contact", label: "Contact" },
+  { href: "/partner", label: "Partner" },
+];
+
 
   return (
     <header className="border-b">
