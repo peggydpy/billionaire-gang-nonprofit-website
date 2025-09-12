@@ -56,6 +56,17 @@ export default function NavBar() {
               <li key={l.href}>
                 <Link href={l.href} onClick={() => setOpen(false)}>
                   {l.label}
+                  <li>
+                    <li>
+  <Link
+    href="/donate-to-participate"
+    onClick={() => setOpen(false)}
+    className="inline-flex w-full justify-center px-4 py-2 rounded-xl border bg-teal-500 text-white font-medium"
+  >
+    Donate to Participate
+  </Link>
+</li>
+
                 </Link>
               </li>
             ))}
