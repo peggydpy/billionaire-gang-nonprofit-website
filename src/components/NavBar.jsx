@@ -18,8 +18,8 @@ export default function NavBar() {
   <Image
     src="/logo.png"     // ensure your file is public/logo.png
     alt="Billionaire Gang"
-    width={28}
-    height={28}
+    width={64}
+    height={64}
     priority
   />
   <span>Billionaire Gang</span>
