@@ -26,6 +26,6 @@ jobs:
           # App config (Next.js at repo root)
           app_location: "/"
           api_location: ""
-          app_build_command: "npm ci && npm run build"
+          app_build_command: "npm install && npm run build"
           # For modern Next.js on SWA, Oryx detects .next; leaving output blank is fine.
           # output_location: ""
