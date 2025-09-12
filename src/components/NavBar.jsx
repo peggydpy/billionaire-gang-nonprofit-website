@@ -4,11 +4,9 @@ import { useState } from "react";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false); // mobile dropdown
 
-  const links = [
-    { href: "/who-we-are", label: "Who We Are" },
-    { href: "/what-we-do", label: "What We Do" },
-    { href: "/how-it-works", label: "How It Works" },
+  const otherLinks = [
     { href: "/contact", label: "Contact" },
     { href: "/partner", label: "Partner" },
   ];
@@ -41,7 +39,27 @@ export default function NavBar() {
         {/* Desktop nav */}
         <nav className="hidden md:block" aria-label="Primary">
           <ul className="flex items-center gap-6">
-            {links.map((l) => (
+            {/* About (dropdown) */}
+            <li className="relative group">
+              <Link href="/about#who-we-are" className="hover:underline">
+                Who We Are
+              </Link>
+              {/* dropdown panel on hover */}
+              <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition
+                              absolute left-0 mt-2 w-56 rounded-xl border bg-white shadow p-2">
+                <Link href="/about#who-we-are" className="block px-3 py-2 rounded-lg hover:bg-gray-50">
+                  Who We Are
+                </Link>
+                <Link href="/about#what-we-do" className="block px-3 py-2 rounded-lg hover:bg-gray-50">
+                  What We Do
+                </Link>
+                <Link href="/about#how-it-works" className="block px-3 py-2 rounded-lg hover:bg-gray-50">
+                  How It Works
+                </Link>
+              </div>
+            </li>
+
+            {otherLinks.map((l) => (
               <li key={l.href}>
                 <Link href={l.href} className="hover:underline">
                   {l.label}
@@ -51,11 +69,10 @@ export default function NavBar() {
           </ul>
         </nav>
 
-        {/* Desktop CTA on the far right */}
+        {/* Desktop CTA */}
         <Link
           href="/donate-to-participate"
           className="hidden md:inline-flex ml-4 px-4 py-2 rounded-xl border bg-teal-500 text-white font-medium hover:shadow-sm active:translate-y-px transition"
-          aria-label="Donate to Participate"
         >
           Donate to Participate
         </Link>
@@ -65,13 +82,44 @@ export default function NavBar() {
       {open && (
         <div id="mobile-menu" className="md:hidden border-t">
           <ul className="p-4 space-y-3">
-            {links.map((l) => (
+            {/* About with nested items */}
+            <li>
+              <button
+                className="w-full text-left px-3 py-2 rounded-lg border"
+                aria-expanded={aboutOpen}
+                onClick={() => setAboutOpen((v) => !v)}
+              >
+                Who We Are
+              </button>
+              {aboutOpen && (
+                <ul className="mt-2 ml-3 space-y-2">
+                  <li>
+                    <Link href="/about#who-we-are" onClick={() => setOpen(false)} className="block px-3 py-2 rounded hover:bg-gray-50">
+                      Who We Are
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/about#what-we-do" onClick={() => setOpen(false)} className="block px-3 py-2 rounded hover:bg-gray-50">
+                      What We Do
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/about#how-it-works" onClick={() => setOpen(false)} className="block px-3 py-2 rounded hover:bg-gray-50">
+                      How It Works
+                    </Link>
+                  </li>
+                </ul>
+              )}
+            </li>
+
+            {otherLinks.map((l) => (
               <li key={l.href}>
-                <Link href={l.href} onClick={() => setOpen(false)}>
+                <Link href={l.href} onClick={() => setOpen(false)} className="block px-3 py-2 rounded hover:bg-gray-50">
                   {l.label}
                 </Link>
               </li>
             ))}
+
             <li>
               <Link
                 href="/donate-to-participate"
@@ -87,4 +135,3 @@ export default function NavBar() {
     </header>
   );
 }
-
